@@ -426,7 +426,7 @@ class File implements \ArrayAccess, \IteratorAggregate, \Countable
      * Iterator Aggregate Interface
      *******************************************************************************/
 
-    public function getIterator(): Traversable
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->objects);
     }
