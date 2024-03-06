@@ -390,7 +390,7 @@ class File implements \ArrayAccess, \IteratorAggregate, \Countable
                 throw new \Upload\Exception('File already exists', $fileInfo);
             }
 
-            $this->storage->put($fileInfo->getNameWithExtension(), $fileInfo->getContents());
+            $this->storage->write($fileInfo->getNameWithExtension(), $fileInfo->getContents());
 
             $this->applyCallback('afterUpload', $fileInfo);
         }
