@@ -395,22 +395,22 @@ class File implements \ArrayAccess, \IteratorAggregate, \Countable
      * Array Access Interface
      *******************************************************************************/
 
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->objects[$offset]);
     }
 
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return isset($this->objects[$offset]) ? $this->objects[$offset] : null;
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->objects[$offset] = $value;
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->objects[$offset]);
     }
